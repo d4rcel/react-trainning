@@ -65,7 +65,8 @@ const NewMemoryGame = () => {
         <div className='grid grid-cols-4 gap-y-2'>
             {cards.map((card, index) => (
                 <div onClick={() => handleCardClick(index)}
-                    className={`shadow w-24 h-24 flex justify-center items-center cursor-pointer ${flippedIndices.includes(index) || matchedPairs.includes(card.content) ? "bg-white" : "bg-blue-600"}`}
+                    className={`shadow w-24 h-24 flex justify-center items-center cursor-pointer ${flippedIndices.includes(index) || matchedPairs.includes(card.content) ? "bg-white" : "bg-blue-600"}
+                        ${matchedPairs.includes(card.content) ? "opacity-50" : ""}`}
                 > {`${flippedIndices.includes(index) || matchedPairs.includes(card.content) ? card.content : "?"}`}
                 </div>
             ))}
